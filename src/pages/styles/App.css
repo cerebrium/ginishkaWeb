@@ -40,7 +40,7 @@
     }
     
     .mainContainer {
-      min-width: 100vw;
+      min-height: 100vh;
     }
 
     .myTextArea{
@@ -238,7 +238,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 8%;
+    padding-top: 5%;
   }
   
   .myTextArea{
