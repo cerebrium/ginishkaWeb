@@ -5,9 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Home" />
-    <div className='mainContainer'>
       <div className='navContainer'>
         <div><Link to='/about/' className='nav'>Home</Link></div>{' | '}
         <div><Link to='/recruitment/' className='nav'>Recruitment</Link></div>{' | '}
@@ -15,8 +14,13 @@ const IndexPage = () => (
         <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
         <div><Link to='/contact/'className='nav'>Contact</Link></div>
       </div>
-    </div>
-  </Layout>
+      <div className='mainContainerTitle'>
+        <div className='titlePage'>
+          <h1>Welcome to Amazon Recruitment Services</h1>
+          <h3 className='nonCommentSectionFirst'>A delivery service that fully embraces a client-first approach</h3>
+        </div>
+      </div>
+  </>
 )
 
 export default IndexPage
