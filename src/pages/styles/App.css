@@ -14,10 +14,12 @@
     }    
     
     .myTextArea{
-        width: 50vw;
-        height: 50vh;
+        max-width: 60vw;
     }
 
+    .myForm {
+        width: 35vh;
+    }
 
     .titlePage {
         display: flex;
