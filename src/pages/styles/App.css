@@ -5,6 +5,7 @@
     }
 
     .contactPageMain {
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,9 +44,9 @@
       min-height: 100vh;
     }
 
-    .myTextArea{
-        width: 25vh;
-        height: 25vh;
+    .myForm{
+        width: 50vh;
+        height: 50vh;
     }
     
     .navContainer {
