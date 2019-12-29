@@ -35,14 +35,12 @@ import { Link } from 'gatsby';
             const { status } = this.state;
             return (
                 <>
-                    <div className='mainContainer'>
-                        <div className='navContainer'>
+                    <div className='navContainer'>
                         <div><Link to='/about/' className='nav'>Home</Link></div>{' | '}
                         <div><Link to='/recruitment/' className='nav'>Recruitment</Link></div>{' | '}
                         <div><Link to='/testimonials/' className='nav'>Testimonials</Link></div>{' | '}
                         <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
                         <div><Link to='/contact/'className='nav'>Contact</Link></div>
-                        </div>
                     </div>
                     <div className='contactPageMain'>
                         <h1>Contact Us!</h1>
