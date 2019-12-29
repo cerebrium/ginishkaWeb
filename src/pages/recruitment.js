@@ -36,6 +36,7 @@ const Recruitment = () => {
         <div className='mainContainer'>
           <div className='rowCentering'>
             <div className='contentCentering pictureBackground'>
+                <br />
                 <h1>Recruitment</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quae, autem iste aut architecto laborum accusamus similique excepturi sunt voluptates doloribus dignissimos recusandae beatae cupiditate, culpa, incidunt ut dolorem consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quae, autem iste aut architecto laborum accusamus similique excepturi sunt voluptates doloribus dignissimos recusandae beatae cupiditate, culpa, incidunt ut dolorem consectetur.</p>
