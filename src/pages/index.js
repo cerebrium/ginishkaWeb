@@ -9,8 +9,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className='mainContainer'>
       <div className='navContainer'>
-        <div><Link to='/' className='nav'>Home</Link></div>{' | '}
-        <div><Link to='/about/' className='nav'>About</Link></div>{' | '}
+        <div><Link to='/about/' className='nav'>Home</Link></div>{' | '}
         <div><Link to='/recruitment/' className='nav'>Recruitment</Link></div>{' | '}
         <div><Link to='/testimonials/' className='nav'>Testimonials</Link></div>{' | '}
         <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
