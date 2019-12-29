@@ -11,6 +11,11 @@
     .mainContainer {
       min-width: 100vw;
     }
+
+    .myTextArea{
+        width: 50vh;
+        height: 50vh;
+    }
     
     .navContainer {
       z-index: 1;
@@ -32,6 +37,12 @@
       color: rgb(29, 76, 114);
       font-size: 1.3em;
     }
+
+    .linkButton {
+        text-decoration: none;
+        color: black;
+        padding-bottom: 2%;
+      }
   }
   
   
