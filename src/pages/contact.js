@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './styles/App.css';
+import './styles/App.scss';
 import { Link } from 'gatsby';
 
     export default class Contact extends React.Component {
@@ -34,7 +34,7 @@ import { Link } from 'gatsby';
         render() {
             const { status } = this.state;
             return (
-                <>
+                <div className='mainContainer'>
                     <div className='navContainer'>
                         <div><Link to='/about/' className='nav'>Home</Link></div>{' | '}
                         <div><Link to='/recruitment/' className='nav'>Recruitment</Link></div>{' | '}
@@ -42,7 +42,7 @@ import { Link } from 'gatsby';
                         <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
                         <div><Link to='/contact/'className='nav'>Contact</Link></div>
                     </div>
-                    <div className='contactPageMain'>
+                    <div className='contentDiv'>
                         <h1>Contact Us!</h1>
                         <form onSubmit={this.submitForm} action='https://formspree.io/meqelkae' method="POST" className='myForm'>
                             <label >Name:</label>{'  '}
@@ -54,7 +54,7 @@ import { Link } from 'gatsby';
                             {status === "ERROR" && <p>Ooops! There was an error.</p>}
                         </form>
                     </div>
-                </>
+                </div>
             );
         }
     }

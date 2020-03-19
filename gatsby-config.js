@@ -1,12 +1,27 @@
 module.exports = {
   pathPrefix: "/ginishkaWeb",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Amazon Delivery Website`,
+    description: `We here at Amazon Delivery really enjoy providing customers with a great experience.`,
+    author: `Nicholas Shankland`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Bellota`,
+            variants: [`400`, `700`, 'cursive']
+          },
+          {
+            family: 'Ubuntu'
+          }
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

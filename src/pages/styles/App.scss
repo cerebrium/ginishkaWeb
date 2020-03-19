@@ -1,0 +1,338 @@
+/***************************** MOBILE FRIENDLY ******************************/
+@media screen and (max-width: 700px) {
+
+  /***************************** SCSS STYLING ******************************/
+  %background-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: green($color: #000000);
+    border-radius: 15%;
+    opacity: .8;
+  }
+    html {
+      font-size: 80%;
+    }
+
+    .contactPageMain {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 5%;
+    }    
+    
+    .myTextArea{
+        max-width: 60vw;
+    }
+
+    .myForm {
+        width: 35vh;
+    }
+
+    .titlePage {
+      @extend %background-boxes
+    }
+    
+    .nonCommentSectionFirst{
+        margin: 1em 2em;
+        text-align: justify;    
+    }
+
+    .mainContainerTitle {
+        min-height: 100vh;
+        background-image: url('./delivery.jpg');
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .App {
+      text-align: center;
+    }
+    
+    .mainContainer {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navContainer {
+      z-index: 1;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-evenly;
+      position: fixed; /* Make it stick, even on scroll */
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: 7%;
+      background: white;
+      font-size: 60%;
+    }
+    
+    .nav {
+      text-decoration: none;
+      color: rgb(29, 76, 114);
+      font-size: 1.3em;
+    }
+
+    .linkButton {
+        text-decoration: none;
+        color: black;
+        padding-bottom: 2%;
+      }
+  }
+  
+  
+  
+  /***************************** MAIN APP STYLING ******************************/
+  /***************************** SCSS STYLING ******************************/
+  $grey-color: rgb(68, 68, 68);
+
+  %background-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey-color;
+    opacity: .9;
+  }
+
+  %center-things {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  %button-class {
+    width: 13vw;
+    height: 10vh;
+    font-size: 1em;
+    border-radius: 10%;
+  }
+
+  %button-class:hover {
+    animation-name: fadeShadow;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bellota';
+  }
+
+  .titlePage {
+    @extend %background-boxes;
+    padding: 1%;
+    font-size: 2em;
+    margin-top: 5%;
+    background-color: white;
+    font-family: 'Bellota';
+  }
+
+  .nonCommentSectionFirst{
+    margin: 1em 2em;
+    text-align: justify;
+  }
+  
+  .mainContainer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 7% 93%;
+    grid-template-areas: 
+      "navBar"
+      "contentDiv"
+    ;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .mainContainerTitle {
+    height: 100vh;
+    background-image: url('./delivery.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentDiv {
+    grid-area: contentDiv;
+    min-height: 93%;
+    min-width: 100%;
+  }
+  
+  .navContainer {
+    z-index: 1;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed; /* Make it stick, even on scroll */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 7%;
+    background: $grey-color;
+    grid-area: navBar;
+    color: rgb(173, 173, 173);
+    font-family: 'Bellota';
+  }
+  
+  .nav {
+    text-decoration: none;
+    color: rgb(173, 173, 173);
+    font-size: 1.5em;
+    opacity: .8;
+  }
+
+  .nav:hover {
+    color: rgb(192, 191, 191);
+    font-size: 1.52em;
+    opacity: 1;
+  }
+  
+  /***************************** HOME APP STYLING ******************************/
+  .homeContent {
+    @extend %center-things;
+    font-family: 'Ubuntu';
+    font-size: 1.5em;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-direction: column;
+  }
+
+  .homeImages {
+    @extend %center-things;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .imagesDiv {
+    width: 40vw;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  /***************************** testimonials APP STYLING ******************************/
+  
+  
+  /***************************** testimonials APP STYLING ******************************/
+  .submitButton {
+    position: relative;
+    left: 42vw;
+  }
+  
+  
+  /***************************** Contact Page Styling ******************************/
+  .contactPageMain {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5%;
+  }
+  
+  .myTextArea{
+    width: 90vh;
+    height: 50vh;
+  }
+  
+  .myForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  /***************************** Recruitment Page Styling ******************************/
+  .linkButton {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .recruitmentOverall{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pictureRecruitment{
+    min-width: 50%;
+    min-height: 100%;
+    background-image: url('justus-menke-recruit.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .boxMe {
+    @extend %background-boxes;
+    background-color: rgb(238, 238, 238);
+    width: 85%;
+    height: 20%;
+    font-size: 1.3em;
+    opacity: .9;
+  }
+  
+  .recruitmentForm {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    min-width: 50%;
+    font-size: 1.5em;
+    background-color: rgb(238, 238, 238);
+  }
+  
+  .centerTitle {
+    text-align: center;
+  }
+  
+  .recruitButtonOverall {
+    @extend %center-things;
+    min-height: 100%;
+    min-width: 50%;
+    background-color: rgb(238, 238, 238);
+  }
+  
+  .contactButton{
+    @extend %button-class;
+    font-size: 1.3em;
+    border: 2px solid black;
+    background-color: white;
+  }
+
+  .padThis {
+    padding-left: 5%;
+  }
+
+  .team {
+    font-size: 1.2em;
+    background: -webkit-linear-gradient(rgb(146, 145, 145), rgb(20, 19, 19));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } 
+  
+  /***************************** Effects ******************************/
+
+  @keyframes fadeShadow {
+    0% {
+      box-shadow: 0px 0px 0px grey;
+    }
+    100% {
+      box-shadow: 10px 10px 5px grey;
+    }
+  }
