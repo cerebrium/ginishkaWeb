@@ -17,7 +17,7 @@ const Recruitment = () => {
     if (checkedBoxes.length >= 4) {
         reRoute = (
             <div className='recruitButtonOverall'>
-                <button className='contactButton'><Link to='/contact' className='linkButton'>Contact Us Today!</Link></button>
+                <Link to='/contact' className='linkButton'><button className='contactButton'>Contact Us Today!</button></Link>
             </div>
         )
     } else {
