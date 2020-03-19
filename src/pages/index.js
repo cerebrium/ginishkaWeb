@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
 
+// hellp
 const IndexPage = () => (
   <>
     <SEO title="Home" />
