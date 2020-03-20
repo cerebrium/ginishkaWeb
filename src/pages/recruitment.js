@@ -1,11 +1,58 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import { Link } from 'gatsby';
 import './styles/App.scss';
+import theSun from '../images/sunTransparent.png'
+import { props } from 'gatsbypropshandler'
 
 const Recruitment = () => {
 
     const [ checkedBoxes, setCheckedBoxes ] = useState([])
+    const [ status, setStatus ] = useState('')
+    const [ mode, setMode ] = useState("contentDiv")
 
+    useEffect ( () => {
+      let myVar = props('modeToggle')
+      if (myVar !== undefined) {
+        setMode(myVar)
+      }
+      console.log(myVar)
+    }, [])
+
+    const toggleMode = (e) => {
+        console.log('clicked')
+        if (mode === 'contentDiv') {
+          setMode('contentDivDark')
+          props({
+            modeToggle: 'contentDivDark'
+          })
+          console.log(props('modeToggle'))
+        } else {
+          setMode('contentDiv')
+          props({
+            modeToggle: 'contentDiv'
+          })
+          console.log(props('modeToggle'))
+        }
+    }
+
+    const submitForm = (ev) => {
+        ev.preventDefault();
+        const form = ev.target;
+        const data = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            form.reset();
+            setStatus("SUCCESS") 
+        } else {
+            setStatus("ERROR")
+        }
+        };
+        xhr.send(data);
+    }
 
     const handleClick = (event) => {
         let myArray = [...checkedBoxes]
@@ -16,8 +63,17 @@ const Recruitment = () => {
     var reRoute;
     if (checkedBoxes.length >= 4) {
         reRoute = (
-            <div className='recruitButtonOverall'>
-                <Link to='/contact' className='linkButton'><button className='contactButton'>Contact Us Today!</button></Link>
+            <div className='contentDivRecruit'>
+                <h1 className='centerTitle'>Contact Us!</h1>
+                <form onSubmit={submitForm} action='https://formspree.io/meqelkae' method="POST" className='myForm'>
+                    <label className='labels'>Name:</label>{'  '}
+                    <input type="text" name="name" className='inputBars'/><br/>
+                    <label className='labels'>Email:</label>{'  '}
+                    <input type="email" name="email" className='inputBars'/><br/>
+                    <textarea type="textarea" rows='15' cols='16' name="message" className='myTextAreaRecruitment'></textarea><br/>
+                    {status === "SUCCESS" ? <p>Thanks!</p> : <button className='contactButton'>Submit</button>}
+                    {status === "ERROR" && <p>Ooops! There was an error.</p>}
+                </form>
             </div>
         )
     } else {
@@ -43,8 +99,8 @@ const Recruitment = () => {
                         </p>
                         <p>Do you have any criminal convictions?</p>
                         <p>
-                            Yes{'  '}<input type="checkbox" value='licenseToDrive' onClick={handleClick} />{' | '}
-                            No{'  '}<input type="checkbox" value='licenseToDrive'/>
+                            Yes{'  '}<input type="checkbox" value='licenseToDrive'/>{' | '}
+                            No{'  '}<input type="checkbox" value='licenseToDrive' onClick={handleClick} />
                         </p>
                     </form>
                 </div>
@@ -61,7 +117,12 @@ const Recruitment = () => {
                 <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
                 <div><Link to='/contact/'className='nav'>Contact</Link></div>
             </div>
-            <div className='contentDiv'>
+            <div className='modeToggle'>
+              <div className='imageContainer'>
+                <img src={theSun} className='sunImage' onClick={toggleMode}/>
+              </div>
+            </div>
+            <div className={mode}>
                 <div className='recruitmentOverall'>
                     <div  className='pictureRecruitment'>
                         <div className='boxMe'>

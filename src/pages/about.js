@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './styles/App.scss';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import theSun from '../images/sunTransparent.png'
+import { props } from 'gatsbypropshandler'
 
 const About = () => {
+  const [ mode, setMode ] = useState("contentDiv")
+
+  useEffect ( () => {
+    let myVar = props('modeToggle')
+    if (myVar) {
+      setMode(myVar)
+    }
+    console.log(myVar)
+  }, [])
+
     const data = useStaticQuery(graphql`
     query {
       imageOne: file(relativePath: { eq: "bannon-morrissy-homeOne.jpg" }) {
@@ -24,6 +36,22 @@ const About = () => {
     }
   `)
 
+  const toggleMode = (e) => {
+    if (mode === 'contentDiv') {
+      setMode('contentDivDark')
+      props({
+        modeToggle: 'contentDivDark'
+      })
+      console.log(props('modeToggle'))
+    } else {
+      setMode('contentDiv')
+      props({
+        modeToggle: 'contentDiv'
+      })
+      console.log(props('modeToggle'))
+    }
+  }
+
     return (
         <div className='mainContainer'>
             <div className='navContainer'>
@@ -33,7 +61,12 @@ const About = () => {
                 <div><Link to='/policies/' className='nav'>Policies</Link></div>{' | '}
                 <div><Link to='/contact/'className='nav'>Contact</Link></div>
             </div>
-            <div className="contentDiv">
+            <div className='modeToggle'>
+              <div className='imageContainer'>
+                <img src={theSun} className='sunImage' onClick={toggleMode}/>
+              </div>
+            </div>
+            <div className={mode}>
                 <h1 className='centerTitle'>Amazon Delivery Service</h1>
                 <div className='homeContent'>
                     <p>

@@ -41,14 +41,11 @@
         text-align: justify;    
     }
 
-    .mainContainerTitle {
-        min-height: 100vh;
-        background-image: url('./delivery.jpg');
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .contentDivTwo {
+      background-image: url('./delivery.jpg');
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   
     .App {
@@ -56,10 +53,15 @@
     }
     
     .mainContainer {
+      display: grid;
+      grid-template-columns: 90% 10%;
+      grid-template-rows: 7% 93%;
+      grid-template-areas: 
+        "navBar modeToggle"
+        "contentDiv contentDiv"
+      ;
       height: 100vh;
       width: 100vw;
-      margin: 0;
-      padding: 0;
     }
     
     .navContainer {
@@ -68,13 +70,12 @@
       flex-flow: row;
       align-items: center;
       justify-content: space-evenly;
-      position: fixed; /* Make it stick, even on scroll */
-      width: 100%;
+      min-width: 100%;
       margin: 0;
       padding: 0;
-      height: 7%;
+      min-height: 7%;
       background: white;
-      font-size: 60%;
+      font-size: 80%;
     }
     
     .nav {
@@ -88,9 +89,89 @@
         color: black;
         padding-bottom: 2%;
       }
+      .recruitmentOverall {
+        flex-direction: column;
+      }
+  
+      .myTextAreaRecruitment {
+        width: 70vw;
+      }
   }
   
   
+  @media screen and (max-width: 1089px) {
+
+    .recruitmentOverall {
+      flex-direction: column;
+    }
+
+    .myTextAreaRecruitment {
+      width: 70vw;
+    }
+
+    .navContainer{
+      min-width: 95%;
+      margin: 0;
+      padding: 0;
+      height: 7%;
+    }
+
+    .mainContainer {
+      display: grid;
+      grid-template-columns: 90% 10%;
+      grid-template-rows: 7% 93%;
+      grid-template-areas: 
+        "navBar modeToggle"
+        "contentDiv contentDiv"
+      ;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .modeToggle {
+      grid-area: modeToggle;
+      height: 100%;
+      min-width: 100%;
+    }
+
+  }
+
+  @media screen and (max-height: 560px) {
+
+    .recruitmentOverall {
+      flex-direction: column;
+    }
+
+    .myTextAreaRecruitment {
+      width: 70vw;
+    }
+
+    .navContainer{
+      min-width: 95%;
+      margin: 0;
+      padding: 0;
+      height: 7%;
+    }
+
+    .mainContainer {
+      display: grid;
+      grid-template-columns: 80% 20%;
+      grid-template-rows: 7% 93%;
+      grid-template-areas: 
+        "navBar modeToggle"
+        "contentDiv contentDiv"
+      ;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .modeToggle {
+      grid-area: modeToggle;
+      height: 100%;
+      min-width: 100%;
+    }
+
+  }
   
   /***************************** MAIN APP STYLING ******************************/
   /***************************** SCSS STYLING ******************************/
@@ -112,8 +193,8 @@
   }
 
   %button-class {
-    width: 13vw;
-    height: 10vh;
+    width: 10vw;
+    height: 7vh;
     font-size: 1em;
     border-radius: 10%;
   }
@@ -135,6 +216,7 @@
     padding: 1%;
     font-size: 2em;
     margin-top: 5%;
+    max-width: 70vw;
     background-color: white;
     font-family: 'Bellota';
   }
@@ -143,14 +225,40 @@
     margin: 1em 2em;
     text-align: justify;
   }
-  
+
+  .modeToggle {
+    grid-area: modeToggle;
+    background-color: $grey-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sunImage{
+    max-height: 5vh;
+  }
+
+  .navContainer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: $grey-color;
+    grid-area: navBar;
+    color: rgb(173, 173, 173);
+    font-family: 'Bellota';
+  }
+
   .mainContainer {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 95% 5%;
     grid-template-rows: 7% 93%;
     grid-template-areas: 
-      "navBar"
-      "contentDiv"
+      "navBar modeToggle"
+      "contentDiv contentDiv"
     ;
     height: 100vh;
     width: 100vw;
@@ -165,27 +273,33 @@
     align-items: center;
   }
 
-  .contentDiv {
+  .contentDivTwo {
+    background-image: url('./delivery.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: start;
+    justify-content: center;
     grid-area: contentDiv;
     min-height: 93%;
     min-width: 100%;
   }
-  
-  .navContainer {
-    z-index: 1;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-evenly;
-    position: fixed; /* Make it stick, even on scroll */
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 7%;
-    background: $grey-color;
-    grid-area: navBar;
-    color: rgb(173, 173, 173);
-    font-family: 'Bellota';
+
+  .contentDiv {
+    grid-area: contentDiv;
+    min-height: 93%;
+    min-width: 100%;
+    animation-name: changeColorLight;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+  }
+
+  .contentDivDark {
+    grid-area: contentDiv;
+    min-height: 93%;
+    min-width: 100%;
+    animation-name: changeColorDark;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
   }
   
   .nav {
@@ -264,6 +378,10 @@
     height: 5vh;
     width: 10vw;
   }
+
+  .recruitText {
+    color: black;
+  }
   
   .recruitmentOverall{
     display: flex;
@@ -295,7 +413,6 @@
     min-height: 100%;
     min-width: 50%;
     font-size: 1.5em;
-    background-color: rgb(238, 238, 238);
   }
   
   .centerTitle {
@@ -310,7 +427,7 @@
     background-color: rgb(238, 238, 238);
   }
   
-  .contactButton{
+  .contactButton {
     @extend %button-class;
     font-size: 1.3em;
     border: 2px solid black;
@@ -329,6 +446,25 @@
     -webkit-text-fill-color: transparent;
   } 
   
+  .contentDivRecruit {
+    min-width: 50%;
+    padding-bottom: 2%;
+  }
+
+  .inputBars {
+    width: 15vw;
+    height: 3vh;
+  }
+
+  .labels {
+    font-size: 1.3em;
+  }
+
+  .myTextAreaRecruitment {
+    height: 40vh;
+    width: 40vw;
+  }
+
   /***************************** Effects ******************************/
 
   @keyframes fadeShadow {
@@ -337,5 +473,25 @@
     }
     100% {
       box-shadow: 10px 10px 5px grey;
+    }
+  }
+
+  @keyframes changeColorLight {
+    0% {
+      background-color: rgb(18, 7, 43);
+    }
+    100% {
+      background-color: rgb(241, 241, 241);
+      color: black;
+    }
+  }
+
+  @keyframes changeColorDark {
+    0% {
+      background: $grey-color;
+    }
+    100% {
+      background-color: rgb(18, 7, 43);
+      color: white;
     }
   }
