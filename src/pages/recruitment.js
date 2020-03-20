@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './styles/App.scss';
 import theSun from '../images/sunTransparent.png'
+import theMoon from '../images/moonTransparent.png'
 import { props } from 'gatsbypropshandler'
 
 const Recruitment = () => {
@@ -9,31 +10,35 @@ const Recruitment = () => {
     const [ checkedBoxes, setCheckedBoxes ] = useState([])
     const [ status, setStatus ] = useState('')
     const [ mode, setMode ] = useState("contentDiv")
+    const [ imageSelection, setImageSelection ] = useState(theMoon)
 
     useEffect ( () => {
       let myVar = props('modeToggle')
       if (myVar !== undefined) {
         setMode(myVar)
+        if (myVar === 'contentDiv') {
+            setImageSelection(theMoon)
+          } else {
+            setImageSelection(theSun)
+          }
       }
-      console.log(myVar)
     }, [])
 
     const toggleMode = (e) => {
-        console.log('clicked')
         if (mode === 'contentDiv') {
           setMode('contentDivDark')
           props({
             modeToggle: 'contentDivDark'
           })
-          console.log(props('modeToggle'))
+          setImageSelection(theSun)
         } else {
           setMode('contentDiv')
           props({
             modeToggle: 'contentDiv'
           })
-          console.log(props('modeToggle'))
+          setImageSelection(theMoon)
         }
-    }
+      }
 
     const submitForm = (ev) => {
         ev.preventDefault();
@@ -119,7 +124,7 @@ const Recruitment = () => {
             </div>
             <div className='modeToggle'>
               <div className='imageContainer'>
-                <img src={theSun} className='sunImage' onClick={toggleMode}/>
+                <img src={imageSelection} title='toggle dark and light modes' className='sunImage' onClick={toggleMode}/>
               </div>
             </div>
             <div className={mode}>
