@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './styles/App.scss';
 import theSun from '../images/sunTransparent.png'
-import theMoon from '../images/moonTransparent.png'
+import theMoon from '../images/moon.png'
 import { props } from 'gatsbypropshandler'
 
 const Policies = () => {
@@ -53,7 +53,7 @@ const Policies = () => {
             </div>
             <div className={mode}>
                 <h1 className='centerTitle'>Policies</h1>
-                    <ul>
+                    <ul className='policiesList'>
                         <li>
                             No drinking or doing any type of illicit material whilst driving or preparing to drive
                         </li>
@@ -83,7 +83,7 @@ const Policies = () => {
                         </li>
                         <br />
                         <li>
-                            Follow all amazon rules and regulations for drivers found <a href='https://flex.amazon.com/faqs' target="_blank">here</a>
+                            Follow all amazon rules and regulations for drivers found <a href='https://flex.amazon.com/faqs' target="_blank" className='amazonLink'>HERE</a>
                         </li>
                         <br />
                     </ul>   

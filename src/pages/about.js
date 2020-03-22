@@ -4,7 +4,7 @@ import './styles/App.scss';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import theSun from '../images/sunTransparent.png'
-import theMoon from '../images/moonTransparent.png'
+import theMoon from '../images/moon.png'
 import { props } from 'gatsbypropshandler'
 
 const About = () => {

@@ -205,6 +205,17 @@
     animation-fill-mode: forwards;
   }
 
+  %link-class {
+    text-decoration: none;
+    color: red;
+    font-size: 1.35em;
+  } 
+
+  %link-class:hover {
+    color: rgb(218, 53, 53);
+    text-shadow: 2px 2px 2px grey;
+  }
+
   body, html {
     margin: 0;
     padding: 0;
@@ -338,15 +349,107 @@
     margin-right: 5%;
   }
   
-  /***************************** testimonials APP STYLING ******************************/
+  /***************************** Policies APP STYLING ******************************/
   
+  .policiesList{
+    font-size: 1.3em;
+  }
   
-  /***************************** testimonials APP STYLING ******************************/
   .submitButton {
     position: relative;
     left: 42vw;
   }
   
+  .amazonLink {
+    @extend %link-class;
+  }
+  /***************************** testimonials APP STYLING ******************************/
+
+  .testimonialPics {
+    min-width: 6vw;
+    min-height: 6vh;
+  }
+
+  .testimonialPic {
+    border-radius: 50%;
+  }
+
+  .commentBox {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-right: 20%;
+  }
+
+  .commentBoxDark {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid white;
+    margin-right: 20%;
+  }
+
+  .commentBoxTwo {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-left: 20%;
+  }
+
+  .commentBoxDarkTwo {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid white;
+    margin-left: 20%;
+  }
+
+  .testimonialText {
+    margin-left: 2%;
+  }
+  
+  .testimonialPicsRight {
+    min-width: 6vw;
+    min-height: 6vh;
+    justify-self: flex-end;
+  }
+
+  .testimonialPicRight {
+    border-radius: 50%;
+  }
+
+  .testimonialTextRight {
+    margin-right: 2%;
+    text-align: right;
+  }
+
+  .testimonialEmphasis {
+    color: rgb(204, 41, 177);
+    font-size: 1.2em;
+  }
+
+  .testimonialEmphasisDark {
+    color: lightblue;
+    font-size: 1.2em;
+  }
   
   /***************************** Contact Page Styling ******************************/
   .contactPageMain {

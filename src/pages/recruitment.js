@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './styles/App.scss';
 import theSun from '../images/sunTransparent.png'
-import theMoon from '../images/moonTransparent.png'
+import theMoon from '../images/moon.png'
 import { props } from 'gatsbypropshandler'
 
 const Recruitment = () => {
