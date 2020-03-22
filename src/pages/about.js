@@ -75,7 +75,7 @@ const About = () => {
             <div className={mode}>
                 <h1 className='centerTitle'>Amazon Delivery Service</h1>
                 <div className='homeContent'>
-                    <p>
+                    <p className='aboutText'>
                         We are a company that allows for drivers to be linked up with work at Amazon. Through working with us you can expect constant pay and reliable support. We strive to provide the best environment for new and experienced drivers. If you are interested, view the contact page to send us your information.
                     </p>  
                     <div className='homeImages'>
