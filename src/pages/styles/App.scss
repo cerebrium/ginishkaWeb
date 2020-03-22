@@ -2,17 +2,62 @@
 @media screen and (max-width: 700px) {
 
   /***************************** SCSS STYLING ******************************/
+  $grey-color: rgb(68, 68, 68);
+
   %background-boxes {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: green($color: #000000);
-    border-radius: 15%;
-    opacity: .8;
+    background-color: $grey-color;
+    opacity: .9;
   }
-    html {
+
+  %center-things {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  %button-class {
+    width: 10vw;
+    height: 7vh;
+    font-size: 1em;
+    border-radius: 10%;
+  }
+
+  %button-class:hover {
+    animation-name: fadeShadow;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+  }
+
+  %link-class {
+    text-decoration: none;
+    color: red;
+    font-size: 1.35em;
+  } 
+
+  %link-class:hover {
+    color: rgb(218, 53, 53);
+    text-shadow: 2px 2px 2px grey;
+  }
+    html, body {
       font-size: 80%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobileContact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contentDivRecruit{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contactPageMain {
@@ -47,10 +92,6 @@
       align-items: center;
       justify-content: center;
     }
-  
-    .App {
-      text-align: center;
-    }
     
     .mainContainer {
       display: grid;
@@ -63,9 +104,28 @@
       height: 100vh;
       width: 100vw;
     }
+
+    .contentDiv {
+      grid-area: contentDiv;
+      min-height: 93%;
+      min-width: 100%;
+      animation-name: changeColorLight;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
+    }
+  
+    .contentDivDark {
+      grid-area: contentDiv;
+      min-height: 93%;
+      min-width: 100%;
+      animation-name: changeColorDark;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
+    }
     
     .navContainer {
-      z-index: 1;
       display: flex;
       flex-flow: row;
       align-items: center;
@@ -73,9 +133,12 @@
       min-width: 100%;
       margin: 0;
       padding: 0;
-      min-height: 7%;
-      background: white;
-      font-size: 80%;
+      min-height: 100%;
+      background: $grey-color;
+      grid-area: navBar;
+      color: rgb(173, 173, 173);
+      font-family: 'Bellota';
+      font-size: 90%;
     }
     
     .nav {
@@ -85,28 +148,139 @@
     }
 
     .linkButton {
-        text-decoration: none;
-        color: black;
-        padding-bottom: 2%;
+      text-decoration: none;
+      color: black;
+      height: 5vh;
+    }
+
+    .recruitmentOverall{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .recruitmentForm {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 50%;
+      font-size: 1.5em;
+    }
+
+    .homeImages {
+      @extend %center-things;
+      flex-direction: column;
+      min-height: 50vh;
+    }
+
+    .imagesDiv {
+      min-width: 40vw;
+      display: block;
+    }
+
+    .contactButton {
+      min-width: 25vw;
+      margin-bottom: 2%;
+    }
+
+    .inputBars {
+      min-width: 45vw;
+    }
+
+    .myTextAreaRecruitment {
+      min-width: 65vw;
+    }
+
+    .myTextAreaRecruitment {
+      width: 70vw;
+    }
+
+    .sunImage{
+      max-width: 99%; 
+    }
+
+    .policiesList {
+      margin-right: 2%;
+    }
+
+    @keyframes fadeShadow {
+      0% {
+        box-shadow: 0px 0px 0px grey;
       }
-      .recruitmentOverall {
-        flex-direction: column;
+      100% {
+        box-shadow: 10px 10px 5px grey;
       }
+    }
   
-      .myTextAreaRecruitment {
-        width: 70vw;
+    @keyframes changeColorLight {
+      0% {
+        background-color: rgb(18, 7, 43);
       }
+      100% {
+        background-color: rgb(241, 241, 241);
+        color: black;
+      }
+    }
+  
+    @keyframes changeColorDark {
+      0% {
+        background: $grey-color;
+      }
+      100% {
+        background-color: rgb(18, 7, 43);
+        color: white;
+      }
+    }
+    
   }
   
   
   @media screen and (max-width: 1089px) {
+    $grey-color: rgb(68, 68, 68);
 
-    .recruitmentOverall {
+    .navContainer {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-evenly;
+      min-width: 100%;
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: $grey-color;
+      grid-area: navBar;
+      color: rgb(173, 173, 173);
+      font-family: 'Bellota';
+      font-size: 90%;
+    }
+    .recruitmentOverall{
+      display: flex;
+      width: 100%;
+      height: 100%;
       flex-direction: column;
     }
 
     .myTextAreaRecruitment {
       width: 70vw;
+    }
+
+    .contentDiv {
+      grid-area: contentDiv;
+      min-height: 100%;
+      min-width: 100%;
+      animation-name: changeColorLight;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
+    }
+  
+    .contentDivDark {
+      grid-area: contentDiv;
+      min-height: 93%;
+      min-width: 100%;
+      animation-name: changeColorDark;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
     }
 
     .navContainer{
@@ -124,8 +298,8 @@
         "navBar modeToggle"
         "contentDiv contentDiv"
       ;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
     }
 
     .modeToggle {
@@ -133,17 +307,56 @@
       height: 100%;
       min-width: 100%;
     }
-
   }
 
   @media screen and (max-height: 560px) {
+    $grey-color: rgb(68, 68, 68);
 
-    .recruitmentOverall {
+    .recruitmentOverall{
+      display: flex;
+      width: 100%;
+      height: 100%;
       flex-direction: column;
     }
 
     .myTextAreaRecruitment {
       width: 70vw;
+    }
+
+    .navContainer {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-evenly;
+      min-width: 100%;
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: $grey-color;
+      grid-area: navBar;
+      color: rgb(173, 173, 173);
+      font-family: 'Bellota';
+      font-size: 90%;
+    }
+
+    .contentDiv {
+      grid-area: contentDiv;
+      min-height: 93%;
+      min-width: 100%;
+      animation-name: changeColorLight;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
+    }
+  
+    .contentDivDark {
+      grid-area: contentDiv;
+      min-height: 93%;
+      min-width: 100%;
+      animation-name: changeColorDark;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: scroll;
     }
 
     .navContainer{
@@ -161,8 +374,8 @@
         "navBar modeToggle"
         "contentDiv contentDiv"
       ;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
     }
 
     .modeToggle {
@@ -170,7 +383,6 @@
       height: 100%;
       min-width: 100%;
     }
-
   }
   
   /***************************** MAIN APP STYLING ******************************/
@@ -244,6 +456,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .sunImage{
     max-height: 5vh;
   }
@@ -338,13 +551,13 @@
 
   .homeImages {
     @extend %center-things;
-    flex-direction: row;
     margin-left: 5%;
     margin-right: 5%;
   }
 
   .imagesDiv {
-    width: 40vw;
+    width: 60vw;
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
   }

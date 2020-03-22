@@ -72,6 +72,7 @@ import { props } from 'gatsbypropshandler'
                     </div>
                 </div>
                 <div className={mode}>
+                  <div className='mobileContact'>
                     <h1 className='centerTitle'>Contact Us!</h1>
                     <form onSubmit={submitForm} action='https://formspree.io/meqelkae' method="POST" className='myForm'>
                         <label className='labels'>Name:</label>{'  '}
@@ -82,6 +83,7 @@ import { props } from 'gatsbypropshandler'
                         {status === "SUCCESS" ? <p>Thanks!</p> : <button className='contactButton'>Submit</button>}
                         {status === "ERROR" && <p>Ooops! There was an error.</p>}
                     </form>
+                  </div>
                 </div>
             </div>
         );
