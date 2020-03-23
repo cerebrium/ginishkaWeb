@@ -124,7 +124,10 @@ const Recruitment = () => {
             </div>
             <div className='modeToggle'>
               <div className='imageContainer'>
-                <img src={imageSelection} title='toggle dark and light modes' className='sunImage' onClick={toggleMode}/>
+                <label class='switch'>
+                    <input type='checkbox' onClick={toggleMode}/>
+                    <span class='slider round'></span>
+                </label>
               </div>
             </div>
             <div className={mode}>
